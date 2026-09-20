@@ -1,0 +1,17 @@
+myapp:
+  testHost: ${docker.host}
+  activateFoo: true
+  fooName: Hello
+  fooHome: ${HOME}/config
+  bar:
+    barRules: 42
+    barDouble: 33.3
+
+config.load.systemProperties: true
+system.excluded.properties: myapp.bar.barRules,myapp.fooName
+
+metal:
+  gear:
+    - snake?
+    - Snake!?
+    - SNAAAAKE!!

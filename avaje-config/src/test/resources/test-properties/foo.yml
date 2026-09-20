@@ -1,0 +1,10 @@
+ebean:
+  ddl:
+    generate: true
+    run: true
+
+Some:
+  Other:
+    pass: ${db_user:someDefault}
+
+

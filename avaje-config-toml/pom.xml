@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.avaje</groupId>
+    <artifactId>java11-oss</artifactId>
+    <version>5.2</version>
+    <relativePath/>
+  </parent>
+
+  <name>Avaje Config Toml</name>
+  <groupId>io.avaje</groupId>
+  <artifactId>avaje-config-toml</artifactId>
+  <version>5.2</version>
+
+  <scm>
+    <connection>scm:git:git@github.com:avaje/avaje-config.git</connection>
+    <developerConnection>scm:git:git@github.com:avaje/avaje-config.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+
+  <properties>
+    <surefire.useModulePath>false</surefire.useModulePath>
+    <project.build.outputTimestamp>2026-06-11T14:52:30Z</project.build.outputTimestamp>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.avaje</groupId>
+      <artifactId>avaje-config</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.tomlj</groupId>
+      <artifactId>tomlj</artifactId>
+      <version>1.2.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.avaje</groupId>
+      <artifactId>junit</artifactId>
+      <version>1.8</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.6.3</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>io.avaje</groupId>
+      <artifactId>avaje-applog-slf4j</artifactId>
+      <version>1.2</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+</project>
