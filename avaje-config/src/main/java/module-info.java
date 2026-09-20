@@ -4,6 +4,8 @@ module io.avaje.config {
 
   requires transitive io.avaje.applog;
 
+  requires static java.compiler;
+
   requires static io.avaje.spi;
   requires static org.yaml.snakeyaml;
   requires static transitive org.jspecify;
