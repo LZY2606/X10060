@@ -85,6 +85,22 @@
         <artifactId>maven-repository-plugin</artifactId>
         <version>2.4</version>
       </plugin>
+      <!-- always attach the sources jar so release metadata is verifiable offline,
+           not only under the central-publishing profile -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.4.0</version>
+        <executions>
+          <execution>
+            <id>attach-sources-offline</id>
+            <phase>package</phase>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
       <!--      <plugin>-->
       <!--        <groupId>org.sonatype.plugins</groupId>-->
       <!--        <artifactId>nexus-staging-maven-plugin</artifactId>-->
