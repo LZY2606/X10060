@@ -13,11 +13,51 @@
   <version>1</version>
   <packaging>pom</packaging>
 
+  <!--
+    Pinned so local and CI builds produce identical archive metadata regardless
+    of when they run (works together with maven-jar-plugin reproducible output).
+  -->
+  <properties>
+    <project.build.outputTimestamp>2026-06-11T14:52:30Z</project.build.outputTimestamp>
+  </properties>
+
   <modules>
     <module>avaje-config</module>
     <module>avaje-config-toml</module>
     <module>avaje-aws-appconfig</module>
     <module>avaje-dynamic-logback</module>
+    <module>avaje-config-processor-it</module>
   </modules>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <!--
+          Attach a sources jar during every build (not only the `central`
+          release profile) so the published source artifacts are always
+          produced and verified by the processor-integration module.
+        -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>3.4.0</version>
+          <executions>
+            <execution>
+              <id>attach-sources</id>
+              <goals>
+                <goal>jar-no-fork</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
